@@ -1,14 +1,14 @@
 const firstName = prompt("Введите имя:", "Анатолий");
-const weight = input("Введите ваш вес:");
-const height = input("Введите ваш рост(в метрах):");
+const weight = input("Введите ваш вес:", "75");
+const height = input("Введите ваш рост(в метрах):", "1.75");
 
 const humanWeightIndex = calculateHumanWeightIndex(weight, height);
 print(firstName, humanWeightIndex, getBodyIndexInformation(humanWeightIndex));
 
-function input(text) {
+function input(text, placeholder) {
     let msg;
     do {
-        msg = prompt(text);
+        msg = prompt(text, placeholder);
         if (msg.trim() && !isNaN(msg) && msg > 0) {
             return msg;
         }
