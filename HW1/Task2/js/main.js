@@ -6,7 +6,10 @@ const humanWeightIndex = calculateHumanWeightIndex(weight, height);
 print(firstName, humanWeightIndex, getBodyIndexInformation(humanWeightIndex));
 
 function isInputValid(msg) {
-    if (msg.trim() && !isNaN(msg) && msg > 0) {
+    if (msg === null) {
+        alert("Вы отменили действие, результат не будет посчитан!");
+        return false;
+    } else if (msg.trim() && !isNaN(msg) && msg > 0) {
         return true;
     }
     return false;
