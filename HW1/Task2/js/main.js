@@ -5,14 +5,19 @@ const height = input("Введите ваш рост(в метрах):", "1.75")
 const humanWeightIndex = calculateHumanWeightIndex(weight, height);
 print(firstName, humanWeightIndex, getBodyIndexInformation(humanWeightIndex));
 
+function isInputValid(msg) {
+    if (msg.trim() && !isNaN(msg) && msg > 0) {
+        return true;
+    }
+    return false;
+}
+
 function input(text, placeholder) {
     let msg;
     do {
         msg = prompt(text, placeholder);
-        if (msg.trim() && !isNaN(msg) && msg > 0) {
-            return msg;
-        }
-    } while (!msg.trim() || isNaN(msg) || msg < 0);
+    } while (!isInputValid(msg));
+    return msg;
 }
 
 function calculateHumanWeightIndex(weight, height) {
