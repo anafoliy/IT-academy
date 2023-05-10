@@ -37,10 +37,11 @@ function inputInfo() {
 
 function getInfo() {
     const drinkName = prompt("Введите название напитка", "Маргарита");
+    const [isAlco, recept] = drinkStorage.getValue(drinkName);
     try {
         alert(`напиток ${drinkName}
-алкогольный: ${drinkStorage.getValue(drinkName)[0]}
-рецепт: ${drinkStorage.getValue(drinkName)[1]}`)
+алкогольный: ${isAlco}
+рецепт: ${recept}`)
     } catch (TypeError) {
         alert("Такого напитка в базе нет!")
     }
