@@ -56,10 +56,9 @@ function deleteInfo() {
 }
 
 function getAllDrinks() {
-    if (drinkStorage.getKeys().length !== 0) {
-        alert(`Перечень всех напитков
-${drinkStorage.getKeys()}`)
-    } else {
-        alert("Список пуст! Добавьте напиток!")
-    }
+    const listOfDrinks = drinkStorage.getKeys();
+    const message = listOfDrinks.length !== 0 
+                    ? `Перечень всех напитков\n${listOfDrinks}` 
+                    : "Список пуст! Добавьте напиток!";
+    alert(message);
 }
