@@ -49,11 +49,10 @@ function getInfo() {
 
 function deleteInfo() {
     const drinkName = prompt("Введите название напитка", "Маргарита");
-    if (drinkStorage.deleteValue(drinkName)) {
-        alert(`напиток ${drinkName} удалён!`);
-    } else {
-        alert("Такого напитка в базе нет!")
-    }
+    const message = drinkStorage.deleteValue(drinkName) 
+                    ? `напиток ${drinkName} удалён!` 
+                    : "Такого напитка в базе нет!";
+    alert(message);
 }
 
 function getAllDrinks() {
