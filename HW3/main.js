@@ -30,7 +30,9 @@ function inputInfo() {
     const drinkName = prompt("Введите название напитка", "Маргарита");
     const alcohol = prompt("Ваш напиток алкогольный?", "Да");
     const recipe = prompt("Напишите рецепт вашего напитка", "Рецепт");
-    drinkStorage.addValue(drinkName, [alcohol, recipe]);
+    if (drinkName && alcohol && recipe) {
+        drinkStorage.addValue(drinkName, [alcohol, recipe]);
+    }
 }
 
 function getInfo() {
@@ -42,7 +44,6 @@ function getInfo() {
     } catch (TypeError) {
         alert("Такого напитка в базе нет!")
     }
-
 }
 
 function deleteInfo() {
