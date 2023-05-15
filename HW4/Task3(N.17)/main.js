@@ -25,7 +25,7 @@ class HashStorageClass {
     }
 }
 
-const drinkStorage = new HashStorageClass();
+const drinkStorage = new HashStorageClass;
 
 function inputInfo() {
     const drinkName = prompt("Введите название напитка", "Маргарита");
