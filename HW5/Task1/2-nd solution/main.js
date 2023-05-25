@@ -1,12 +1,10 @@
-exports.greetingModule = (function () {
-    const greeting = 'Hello';
-    let name = '';
-    return {
-        setName: function (newName) {
-            name = newName;
-        },
-        sayGreeting: function () {
-            return greeting + " " + name;
-        }
+exports.greetingModule = {
+    greeting: 'Hello',
+    name: '',
+    setName: function (newName) {
+        this.name = newName;
+    },
+    sayGreeting: function () {
+        return this.greeting + " " + this.name;
     }
-})();
+};
