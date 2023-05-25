@@ -4,7 +4,7 @@ class Publisher {
     }
 
     printItems() {
-        this.items.forEach(item => item.print());
+        this.items.forEach(item => console.log(item.print()));
     }
 
     add(item) {
@@ -19,7 +19,7 @@ class Item {
     }
 
     print() {
-        console.log(`Title: ${this.title}. Description: ${this.description}`);
+        return `Title: ${this.title}. Description: ${this.description}.`;
     }
 }
 
@@ -30,7 +30,7 @@ class Article extends Item {
     }
 
     print() {
-        console.log(`Title: ${this.title}. Description: ${this.description}. By author: ${this.author}`);
+        return `${super.print()} By author: ${this.author}`;
     }
 }
 
@@ -42,7 +42,7 @@ class News extends Item {
     }
 
     print() {
-        console.log(`Source: ${this.source}, Happened on: ${this.date}. Title: ${this.title}. Description: ${this.description}.`);
+        return `Source: ${this.source}, Happened on: ${this.date}. ${super.print()}`;
     }
 }
 
@@ -58,9 +58,9 @@ class Course extends Item {
 
     print() {
         if (this.#isActual()) {
-            console.log(`Course: ${this.title}, will be available till ${this.expirationDate}`);
+            return `Course: ${this.title}, will be available till ${this.expirationDate}`;
         } else {
-            console.log('Not actual');
+            return 'Not actual';
         }
     }
 }
@@ -75,7 +75,11 @@ publisher.printItems();
 console.log("\n------После добавления чего-то нового------\n");
 
 const course2 = new Course('Курс 2', 'Какое-то название 2-го курса', new Date('2023-04-29'));
+
+const news2 = new News('Новость 2', 'Какое-то описание 2-ой новости', 'какой-то ресурс', '2023-05-22');
 const course3 = new Course('Курс 3', 'Какое-то название 3-го курса', new Date('2025-04-29'));
 publisher.add(course2);
+publisher.add(news2);
 publisher.add(course3);
+
 publisher.printItems();
