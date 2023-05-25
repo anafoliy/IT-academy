@@ -1,10 +1,10 @@
+let greeting = 'Hello';
+let name = '';
 exports.greetingModule = {
-    greeting: 'Hello',
-    name: '',
     setName: function (newName) {
-        this.name = newName;
+        name = newName;
     },
     sayGreeting: function () {
-        return this.greeting + " " + this.name;
+        return greeting + " " + name;
     }
 };
