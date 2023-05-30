@@ -26,12 +26,12 @@ const formDef2 =
         { caption: 'Зарегистрироваться', kind: 'submit' },
     ];
 
-const buildForm = (form, formDef1) => {
+const buildForm = (form, formDef) => {
 
     form.setAttribute('action', 'https://fe.it-academy.by/TestForm.php');
-    for (let i = 0; i < formDef1.length; i++) {
+    for (let i = 0; i < formDef.length; i++) {
 
-        const { label, kind, name, caption } = formDef1[i];
+        const { label, kind, name, caption } = formDef[i];
 
         const labelElement = document.createElement('label');
         labelElement.textContent = label;
@@ -43,7 +43,7 @@ const buildForm = (form, formDef1) => {
         element.setAttribute('id', name);
         element.setAttribute('name', name);
 
-        const { variants } = formDef1[i];
+        const { variants } = formDef[i];
 
         switch (kind) {
 
