@@ -1,0 +1,7 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}

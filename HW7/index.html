@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form id="myForm" action="https://fe.it-academy.by/TestForm.php">
+        <label for="developers">Разработчики:</label>
+        <input type="text" id="developers" name="developers">
+        <span id="developers-error" class="error"></span>
+
+        <label for="sitename">Название сайта:</label>
+        <input type="text" id="sitename" name="sitename">
+        <span id="sitename-error" class="error"></span>
+
+        <label for="siteurl">URL сайта:</label>
+        <input type="text" id="siteurl" name="siteurl">
+        <span id="siteurl-error" class="error"></span>
+
+        <label for="date">Дата запуска сайта:</label>
+        <input type="date" id="date" name="date">
+        <span id="date-error" class="error"></span>
+
+        <label for="visitors">Посетителей в сутки:</label>
+        <input type="number" id="visitors" name="visitors">
+        <span id="visitors-error" class="error"></span>
+
+        <label for="email">E-mail для связи:</label>
+        <input type="text" id="email" name="email">
+        <span id="email-error" class="error"></span>
+
+        <label for="division">Рубрика каталога:</label>
+        <select type="text" id="division" name="division">
+            <option value="">Выберите рубрику</option>
+            <option value="1">здоровье</option>
+            <option value="2">домашний уют</option>
+            <option value="3">бытовая техника</option>
+        </select>
+        <span id="division-error" class="error"></span>
+
+        <label for="payment">Размещение:</label>
+        <div id="payment" name="payment">
+            <input type="radio" id="payment1" name="payment" value="бесплатное">
+            <label for="payment1">бесплатное</label>
+            <input type="radio" id="payment2" name="payment" value="платное">
+            <label for="payment2">платное</label>
+            <input type="radio" id="payment3" name="payment" value="VIP">
+            <label for="payment3">VIP</label>
+        </div>
+        <span id="payment-error" class="error"></span>
+
+        <label for="votes">Разрешить отзывы:</label>
+        <input type="checkbox" id="votes" name="votes">
+        <span id="votes-error" class="error"></span>
+
+        <label for="description">Описание сайта:</label>
+        <textarea type="text" id="description" name="description"></textarea>
+        <span id="description-error" class="error"></span>
+
+        <input type="submit" name="submit" value="Опубликовать">
+    </form>
+    <script src="index.js"></script>
+</body>
+
+</html>
